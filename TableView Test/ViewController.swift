@@ -69,6 +69,18 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     
     //row의 height 조절
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0 {
+           return "1st Section"
+        } else {
+            return "2nd Section"
+        }
+    }
+    
     
     @IBOutlet weak var myTableView: UITableView!
     override func viewDidLoad() {
