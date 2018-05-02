@@ -35,9 +35,31 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("section = \(indexPath.section) row = \(indexPath.row)")
-        print(animals[indexPath.row])
-        print(country[indexPath.row])
+        
+        let myAlert = UIAlertController(title: "AlretController", message: "Test", preferredStyle: UIAlertControllerStyle.alert)
+        
+        
+        let okAction = UIAlertAction(title: "\(indexPath.section)Section  \(indexPath.row)Row Selected", style: .default) {(ACTION: UIAlertAction) -> Void in
+            
+            
+        }
+        
+        //세번째 인자를 클로져 사용
+        //후행 클로져(Trailing Closure) 일때 핸들러 지우고 그앞에 ()
+        
+        
+        let cancelAction = UIAlertAction(title: "CANCEL", style: .cancel, handler: {(ACTION: UIAlertAction) -> Void in
+             })
+        
+ 
+        myAlert.addAction(okAction)
+        myAlert.addAction(cancelAction)
+        
+        
+        present(myAlert, animated: true, completion: nil)
+        
+        
+    
         
     }
     
